@@ -1,10 +1,10 @@
 from PIL import Image
 import os
 
-directory = "datah/characters/"
+directory = "data/characters/"
 files = os.listdir(directory)
 for i in files:
-    image_path = 'datah/characters/' + i + '/UI_NameCardPic_' + i + '_P.jpg'
+    image_path = 'data/characters/' + i + '/UI_NameCardPic_' + i + '_P.jpg'
     # указываем фиксированный размер стороны
     fixed_width = 140
     img = Image.open(image_path)
@@ -17,5 +17,5 @@ for i in files:
     # меняем размер на полученные значения
     new_image = img.resize((140, 67))
     #new_image.show()
-    new_image.save('datah/characters/' + i + '/UI_NameCardPic_' + i + '_P_min.png')
+    new_image.save('data/characters/' + i + '/UI_NameCardPic_' + i + '_P_min.jpeg', "JPEG", quality=100, optimize=True, progressive=True)
     print(i)
